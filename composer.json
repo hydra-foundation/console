@@ -1,5 +1,5 @@
 {
-    "name": "hydra/console",
+    "name": "hydrakit/console",
     "description": "Console command library for Hydra PHP framework",
     "type": "library",
     "license": "MIT",
@@ -27,8 +27,8 @@
     "require": {
         "php": ">=8.2",
         "symfony/console": "^7.0",
-        "hydra/http": "*",
-        "hydra/database": "*"
+        "hydrakit/http": "*",
+        "hydrakit/database": "*"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.0",
