@@ -44,7 +44,7 @@ final class RouteCacheCommandTest extends TestCase
 
     public function testCompilesTheControllerRoutesToTheCache(): void
     {
-        $cache = new RouteCache($this->path);
+        $cache = new RouteCache($this->path, [CacheableRoutesController::class]);
         $tester = new CommandTester(
             new RouteCacheCommand($cache, [CacheableRoutesController::class]),
         );
@@ -60,7 +60,7 @@ final class RouteCacheCommandTest extends TestCase
 
     public function testClearDeletesTheCache(): void
     {
-        $cache = new RouteCache($this->path);
+        $cache = new RouteCache($this->path, [CacheableRoutesController::class]);
         $cache->store([['method' => 'GET', 'path' => '/x', 'handler' => ['X', 'y'], 'middleware' => []]]);
 
         $tester = new CommandTester(new RouteCacheClearCommand($cache));
@@ -72,7 +72,7 @@ final class RouteCacheCommandTest extends TestCase
 
     public function testClearIsASuccessfulNoOpWhenCacheIsCold(): void
     {
-        $tester = new CommandTester(new RouteCacheClearCommand(new RouteCache($this->path)));
+        $tester = new CommandTester(new RouteCacheClearCommand(new RouteCache($this->path, [])));
 
         $this->assertSame(Command::SUCCESS, $tester->execute([]));
         $this->assertStringContainsString('already clear', $tester->getDisplay());
