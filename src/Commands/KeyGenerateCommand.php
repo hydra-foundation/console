@@ -12,13 +12,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * Generates a 256-bit application key (64 hex chars) and writes it to APP_KEY
- * in the .env file — automating the `openssl rand -hex 32` the .env.example
- * documents.
+ * Key generate command
  *
- * Overwriting an existing key is guarded behind --force: APP_KEY will seed
- * encryption/signing, so regenerating it invalidates anything sealed with the
- * old key. The guard makes that an explicit choice, never an accident.
+ * Generates a 256-bit application key (64 hex chars) and writes it to APP_KEY
+ * in the .env file
  */
 #[AsCommand(
     name: 'key:generate',

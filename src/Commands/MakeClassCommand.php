@@ -12,19 +12,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
+ * Make class command
+ *
  * Shared base for the class-emitting stub generators (make:controller,
- * make:ability).
- *
- * It owns the mechanics every such generator repeats — turn a loose name into a
- * PascalCase class (appending a fixed suffix like "Controller" if missing),
- * resolve the target file under a fixed source directory, refuse to clobber an
- * existing file without --force, and write the rendered stub. Subclasses supply
- * only the policy: the directory, the suffix, and the file body via {@see stub()}.
- *
- * Extracted once a second generator existed (controller + ability), not ahead of
- * one — the same restraint the rest of the framework follows. make:migration is
- * deliberately NOT a subclass: it emits a timestamped .sql file, not a class, so
- * folding it in here would be a forced fit.
+ * make:ability)
  */
 abstract class MakeClassCommand extends Command
 {

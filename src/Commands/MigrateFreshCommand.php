@@ -13,13 +13,10 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * Drops every table and re-applies all migrations from scratch — a clean slate
- * for development.
+ * Migrate fresh command
  *
- * Destructive, so it is guarded the same way key:generate guards an existing
- * key: outside debug mode it refuses without --force, and either way it asks for
- * confirmation. The $debug flag is the dev signal Hydra already has (APP_DEBUG);
- * there is no separate APP_ENV.
+ * Drops every table and re-applies all migrations from scratch — a clean slate
+ * for development
  */
 #[AsCommand(
     name: 'migrate:fresh',

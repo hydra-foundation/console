@@ -12,11 +12,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
 /**
- * Scaffolds an empty migration file: {Ymd_His}_{slug}.sql with a header comment.
+ * Make migration command
  *
- * The timestamp prefix is what orders migrations (the runner sorts lexically),
- * and it is the only generation Hydra does for migrations — the body stays a
- * blank .sql file the developer fills in by hand. No fluent builder, no stub DDL.
+ * Scaffolds an empty migration file: {Ymd_His}_{slug}.sql with a header comment
  */
 #[AsCommand(
     name: 'make:migration',
