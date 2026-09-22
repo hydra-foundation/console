@@ -1,6 +1,6 @@
 {
     "name": "hydrakit/console",
-    "description": "The generic console commands every Hydra app needs, powered by Symfony Console.",
+    "description": "The generic console commands every Hydra app needs, and the contracts a command is written against.",
     "type": "library",
     "license": "MIT",
     "homepage": "https://hydra.williamhleucka.com",
@@ -15,9 +15,27 @@
         }
     },
     "repositories": [
-        { "type": "path", "url": "../core", "options": { "symlink": true } },
-        { "type": "path", "url": "../http", "options": { "symlink": true } },
-        { "type": "path", "url": "../database", "options": { "symlink": true } }
+        {
+            "type": "path",
+            "url": "../core",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../http",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../database",
+            "options": {
+                "symlink": true
+            }
+        }
     ],
     "authors": [
         {
@@ -27,7 +45,6 @@
     ],
     "require": {
         "php": ">=8.2",
-        "symfony/console": "^7.0",
         "hydrakit/http": "^0.6",
         "hydrakit/database": "^0.6"
     },
